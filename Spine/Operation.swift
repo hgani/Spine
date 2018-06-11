@@ -318,7 +318,7 @@ class SaveOperation: ConcurrentOperation {
 
 	fileprivate func updateRelationships() {
 		let relationships = resource.fields.filter { field in
-			return field is Relationship && !field.isReadOnly
+			return field is Relationship && !field.isReadOnly && field.isUpdatable
 		}
 		
 		guard !relationships.isEmpty else {
