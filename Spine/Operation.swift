@@ -253,7 +253,7 @@ class SaveOperation: ConcurrentOperation {
 			method = "POST"
 			if let idGenerator = spine.idGenerator {
 				resource.id = idGenerator(resource)
-				options = [.IncludeToOne, .IncludeToMany, .IncludeID]
+				options = [.IncludeToOne, .IncludeToMany, .IncludeID, .OmitNullValues]
 			} else {
 				options = [.IncludeToOne, .IncludeToMany]
 			}
